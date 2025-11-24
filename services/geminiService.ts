@@ -36,9 +36,10 @@ export const generateDreamFlavor = async (mood: string): Promise<GeneratedFlavor
 
     let text = response.text || "{}";
     
-    // Clean up if the model returns markdown code blocks
-    if (text.startsWith("```")) {
-      text = text.replace(/^```(json)?\n/, "").replace(/```$/, "");
+    // Robustly extract JSON if the model returns markdown or extra whitespace
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      text = jsonMatch[0];
     }
     
     return JSON.parse(text) as GeneratedFlavor;

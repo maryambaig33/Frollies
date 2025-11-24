@@ -4,58 +4,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frollies | Fruit & Fun</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration (Must be before the script) -->
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Nunito', 'sans-serif'],
-              display: ['Fredoka', 'sans-serif'],
-            },
-            colors: {
-              frollies: {
-                yellow: '#FFD93D',
-                pink: '#FF6B6B',
-                teal: '#4ECDC4',
-                purple: '#554178',
-                cream: '#F7FFF7'
-              }
-            },
-            animation: {
-              'float': 'float 6s ease-in-out infinite',
-              'bounce-slow': 'bounce 3s infinite',
-              'spin-slow': 'spin 12s linear infinite',
-              'fade-in-down': 'fadeInDown 0.5s ease-out',
-              'fade-in-up': 'fadeInUp 0.5s ease-out',
-            },
-            keyframes: {
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-20px)' },
+      tailwind = {
+        config: {
+          theme: {
+            extend: {
+              fontFamily: {
+                sans: ['Nunito', 'sans-serif'],
+                display: ['Fredoka', 'sans-serif'],
               },
-              fadeInDown: {
-                '0%': { opacity: '0', transform: 'translateY(-10px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
+              colors: {
+                frollies: {
+                  yellow: '#FFD93D',
+                  pink: '#FF6B6B',
+                  teal: '#4ECDC4',
+                  purple: '#554178',
+                  cream: '#F7FFF7'
+                }
               },
-              fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(10px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
+              animation: {
+                'float': 'float 6s ease-in-out infinite',
+                'bounce-slow': 'bounce 3s infinite',
+                'spin-slow': 'spin 12s linear infinite',
+                'fade-in-down': 'fadeInDown 0.5s ease-out',
+                'fade-in-up': 'fadeInUp 0.5s ease-out',
+              },
+              keyframes: {
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-20px)' },
+                },
+                fadeInDown: {
+                  '0%': { opacity: '0', transform: 'translateY(-10px)' },
+                  '100%': { opacity: '1', transform: 'translateY(0)' },
+                },
+                fadeInUp: {
+                  '0%': { opacity: '0', transform: 'translateY(10px)' },
+                  '100%': { opacity: '1', transform: 'translateY(0)' },
+                }
               }
             }
           }
         }
       }
     </script>
-  <script type="importmap">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Import Map -->
+    <script type="importmap">
 {
   "imports": {
     "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
   }
 }
 </script>
