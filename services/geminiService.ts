@@ -34,8 +34,12 @@ export const generateDreamFlavor = async (mood: string): Promise<GeneratedFlavor
       }
     });
 
-    const text = response.text;
-    if (!text) throw new Error("No response from AI");
+    let text = response.text || "{}";
+    
+    // Clean up if the model returns markdown code blocks
+    if (text.startsWith("```")) {
+      text = text.replace(/^```(json)?\n/, "").replace(/```$/, "");
+    }
     
     return JSON.parse(text) as GeneratedFlavor;
   } catch (error) {

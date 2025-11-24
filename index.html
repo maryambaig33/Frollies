@@ -26,11 +26,22 @@
             animation: {
               'float': 'float 6s ease-in-out infinite',
               'bounce-slow': 'bounce 3s infinite',
+              'spin-slow': 'spin 12s linear infinite',
+              'fade-in-down': 'fadeInDown 0.5s ease-out',
+              'fade-in-up': 'fadeInUp 0.5s ease-out',
             },
             keyframes: {
               float: {
                 '0%, 100%': { transform: 'translateY(0)' },
                 '50%': { transform: 'translateY(-20px)' },
+              },
+              fadeInDown: {
+                '0%': { opacity: '0', transform: 'translateY(-10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
               }
             }
           }
@@ -51,5 +62,6 @@
 </head>
   <body class="bg-frollies-cream text-frollies-purple selection:bg-frollies-pink selection:text-white">
     <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
